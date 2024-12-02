@@ -1,1 +1,21 @@
+import os
+import xarray as xr
 
+# Define the folder containing the NetCDF files
+folder_path = 'C:/Users/farah/Desktop/Masters/environmental_programming/ssp585/ssp585/CanESM5'
+# List all files in the folder
+nc_files = [f for f in os.listdir(folder_path) if f.endswith('.nc')]
+datasets = {}
+
+# Iterate through each NetCDF file
+for nc_file in nc_files:
+    file_path = os.path.join(folder_path, nc_file)
+    
+    print(f"Processing file: {nc_file}")
+    data = xr.open_dataset(file_path)
+    
+    # Save the dataset in the dictionary
+    datasets[nc_file] = data
+    
+
+print("Datasets loaded:", datasets.keys())
