@@ -69,11 +69,7 @@ def plot_var_ssb(var: str):
     plt.ylabel('Lattitude')
     plt.xlabel('Longitude')
     plt.savefig(f'{var}.png')
-
-
-
-# List all files in the folder
-
+ 
 
 # Iterate through each NetCDF file
 for root, subdirs, files in os.walk(folder_path):
