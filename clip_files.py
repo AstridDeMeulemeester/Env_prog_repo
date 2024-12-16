@@ -10,18 +10,15 @@ import geopandas as gpd
 import xarray as xr
 import rioxarray
 
-# Step 1: Load the Ethiopia shapefile
-ethiopia_shapefile = "C:/Users/farah/Desktop/Masters/environmental_programming/Ethiopia_All/Eth_Zone_2013.shp"
+
+ethiopia_shapefile = "C:/Users/farah/Desktop/Masters/environmental_programming/world-administrative-boundaries.shp"
 ethiopia_shape = gpd.read_file(ethiopia_shapefile)
 
-# Step 2: Ensure the shapefile CRS is suitable
-print(f"Original Shapefile CRS: {ethiopia_shape.crs}")
-ethiopia_shape = ethiopia_shape.to_crs("EPSG:4326")  # Reproject to EPSG:4326
-print(f"Reprojected Shapefile CRS: {ethiopia_shape.crs}")
 
-# Step 3: Define input and output folders
-input_folder = "C:/Users/farah/Desktop/Masters/environmental_programming/ssp585/ssp585/CanESM5"
-output_folder = "C:/Users/farah/Desktop/Masters/environmental_programming/ssp585/ssp585/CanESM5_clipped"
+print(f"Original Shapefile CRS: {ethiopia_shape.crs}")
+
+input_folder = "C:/Users/farah/Desktop/Masters/environmental_programming/Data/ssp585/ssp585/UKESM1-0-LL"
+output_folder = "C:/Users/farah/Desktop/Masters/environmental_programming/Data/ssp585/ssp585/UKESM1-0-LL_clipped"
 os.makedirs(output_folder, exist_ok=True)  # Create output folder if it doesn't exist
 
 # Step 4: Iterate through all NetCDF files in the folder
