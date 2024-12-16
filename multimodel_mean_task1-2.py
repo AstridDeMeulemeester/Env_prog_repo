@@ -122,6 +122,6 @@ def plot_multi_model_mean(multi_model_mean, variable_name):
     print(f"Saved plot for {variable_name}: {plot_filename}")
 
 # Example: Compute and plot multi-model mean for tasmin
-multi_model_mean_tasmin = compute_multi_model_mean(datasets_by_model, "tasmin")
-plot_multi_model_mean(multi_model_mean_tasmin, "tasmin")
+multi_model_mean_tasmin = compute_multi_model_mean(datasets_by_model, "tasmax")
+plot_multi_model_mean(multi_model_mean_tasmin, "tasmax")
 
